@@ -1,10 +1,10 @@
-import google.generativeai as genai
+import google.generativeai as genai ## pip install -q -U google-generativeai
 
 def main():
     assistente_falante = True
     ligar_microfone = True
 
-    genai.configure(api_key="sua-api-key")
+    genai.configure(api_key="AIzaSyCZjJFydBrNp-hre3sNp2DrIFyynrnp8l0")
     for m in genai.list_models():
         if 'generateContent' in m.supported_generation_methods:
             print(m.name)
@@ -24,7 +24,7 @@ def main():
         for indice, vozes in enumerate(voices): # listar vozes
             print(indice, vozes.name)
 
-        voz = 1
+        voz = 2
         engine.setProperty('voice', voices[voz].id)
 
     if ligar_microfone:
